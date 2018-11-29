@@ -44,7 +44,9 @@ function bindEditButtons() {
 
 function bindSubmitDoggo() {
   submit = document.getElementById('dog-form')
-  submit.addEventListener('submit', submitDoggo)
+  submit.addEventListener('submit', () => {
+    if (editID > 0) {submitDoggo(event)}
+  })
 }
 
 function submitDoggo(event) {
